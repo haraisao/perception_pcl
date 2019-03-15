@@ -115,9 +115,11 @@ class PCDGenerator
           ros::Duration (1).sleep ();
           continue;
         }
-
+#ifdef WIN32
+		    Sleep(interval/1000);
+#else
         usleep (interval);
-
+#endif
         if (interval == 0)	// We only publish once if a 0 seconds interval is given
 				{
 					// Give subscribers 3 seconds until point cloud decays... a little ugly!
