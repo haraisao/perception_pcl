@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 project(pcl_ros)
 
 ## Find system dependencies
+find_package(catkin REQUIRED)
 find_package(cmake_modules REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(Eigen3 REQUIRED)
